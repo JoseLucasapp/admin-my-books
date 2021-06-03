@@ -2,12 +2,14 @@ import express from 'express';
 import cors from 'cors';
 import * as dotenv from 'dotenv';
 
-import SimpleRoutes from '../api/routes/simple.routes';
+import Database from '../api/database/connection/db.connection';
+import SimpleRoutes from '../api/routes/books.routes';
 
 class App{
     public express: express.Application;
     constructor(){
         dotenv.config();
+        Database.connection();
         this.express = express();
         this.middlewares();
         this.routes();

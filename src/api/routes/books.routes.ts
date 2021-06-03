@@ -1,6 +1,6 @@
 import express from 'express';
 
-import SimpleController from '../controllers/simple.controller';
+import SimpleController from '../controllers/books.controller';
 
 class SimpleRoutes{
     private router : express.Router;

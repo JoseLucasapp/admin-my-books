@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 
-import {simple} from '../models/simple.model';
+import {simple} from '../models/books.model';
 
 class SimpleController{
     constructor(){
