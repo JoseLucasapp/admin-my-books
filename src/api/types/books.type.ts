@@ -7,7 +7,9 @@ type Book = {
     publisher?: string,
     cover?: string,
     language?: string,
-    pages?: string
+    pages?: string,
+    price?: number,
+    hasBeenRead?: boolean
 }
 
 export {Book}

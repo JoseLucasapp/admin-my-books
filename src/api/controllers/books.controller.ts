@@ -1,6 +1,6 @@
 import {Request, Response} from 'express';
 
-import {add, getBooks, removeBook, editBook} from '../models/books.model';
+import {add, getBooks, removeBook, editBook, getBookById} from '../models/books.model';
 
 class SimpleController{
     constructor(){
@@ -18,8 +18,19 @@ class SimpleController{
     }
 
     async get(req:Request, res:Response):Promise<Response>{
+        const params = req.query;
         try{
-            const book = await getBooks();
+            const book = await getBooks(params);
+            return res.status(200).json({data:book});
+        }catch(err){
+            return res.status(200).json({error: err});
+        }
+    }
+
+    async getById(req:Request, res:Response):Promise<Response>{
+        const {id} = req.params;
+        try{
+            const book = await getBookById(id);
             return res.status(200).json({data:book});
         }catch(err){
             return res.status(200).json({error: err});

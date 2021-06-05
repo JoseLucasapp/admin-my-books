@@ -7,5 +7,7 @@ export interface BooksInterface{
     publisher?: string,
     cover?: string,
     language?: string,
-    pages?: string
+    pages?: string,
+    price?: number,
+    hasBeenRead?: boolean
 }

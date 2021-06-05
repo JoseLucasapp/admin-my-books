@@ -28,6 +28,13 @@ const booksSchema = new mongoose.Schema({
     },
     language:{
         type: String
+    },
+    price:{
+        type: Number
+    },
+    hasBeenRead:{
+        type: Boolean,
+        default: false
     }
 });
 
