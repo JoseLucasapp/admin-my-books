@@ -1,6 +1,6 @@
 import express from 'express';
 
-import SimpleController from '../controllers/books.controller';
+import BooksController from '../controllers/books.controller';
 
 class SimpleRoutes{
     private router : express.Router;
@@ -9,7 +9,10 @@ class SimpleRoutes{
         this.routes();
     }
     private routes():void{
-        this.router.get('/', SimpleController.simple);
+        this.router.post('/book', BooksController.add);
+        this.router.get('/book', BooksController.get);
+        this.router.delete('/book/:id', BooksController.remove)
+        this.router.put('/book/:id', BooksController.update);
     }
 }
 

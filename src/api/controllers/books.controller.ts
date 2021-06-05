@@ -1,16 +1,47 @@
 import {Request, Response} from 'express';
 
-import {simple} from '../models/books.model';
+import {add, getBooks, removeBook, editBook} from '../models/books.model';
 
 class SimpleController{
     constructor(){
 
     }
 
-    async simple(req:Request, res:Response):Promise<Response>{
+    async add(req:Request, res:Response):Promise<Response>{
+        const data = req.body;
         try{
-            const book = await simple();
-            return res.status(200).json({return: book});
+            const book = await add(data);
+            return res.status(200).json({msg: "Added", data:book});
+        }catch(err){
+            return res.status(200).json({error: err});
+        }
+    }
+
+    async get(req:Request, res:Response):Promise<Response>{
+        try{
+            const book = await getBooks();
+            return res.status(200).json({data:book});
+        }catch(err){
+            return res.status(200).json({error: err});
+        }
+    }
+
+    async remove(req:Request, res:Response):Promise<Response>{
+        const {id} = req.params;
+        try{
+            const book = await removeBook(id);
+            return res.status(200).json({data:book});
+        }catch(err){
+            return res.status(200).json({error: err});
+        }
+    }
+
+    async update(req:Request, res:Response):Promise<Response>{
+        const {id} = req.params;
+        const data = req.body;
+        try{
+            const book = await editBook(id, data);
+            return res.status(200).json({data:book});
         }catch(err){
             return res.status(200).json({error: err});
         }

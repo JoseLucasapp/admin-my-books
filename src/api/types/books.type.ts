@@ -1,4 +1,4 @@
-export interface BooksInterface{
+type Book = {
     _id?: any | string,
     name?: string,
     genre?: string,
@@ -9,3 +9,5 @@ export interface BooksInterface{
     language?: string,
     pages?: string
 }
+
+export {Book}

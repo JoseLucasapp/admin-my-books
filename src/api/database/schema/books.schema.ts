@@ -22,6 +22,12 @@ const booksSchema = new mongoose.Schema({
     },
     cover:{
         type: String
+    },
+    pages:{
+        type: String
+    },
+    language:{
+        type: String
     }
 });
 
