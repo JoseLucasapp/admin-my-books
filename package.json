@@ -5,8 +5,9 @@
   "main": "./src/app.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/app.ts",
-    "build":"sucrase ./src -d ./dist --transforms typescript,imports"
+    "dev": "cross-env NODE_ENV=dev nodemon ./src/app.ts",
+    "production": "cross-env NODE_ENV=production nodemon ./src/app.ts",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "dotenv": "^10.0.0",
     "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
