@@ -5,7 +5,7 @@ class Database{
     public connection():void{
         mongoose.Promise = global.Promise;
         const mongo = MongoDbUrl();
-        mongoose.connect(mongo, {useNewUrlParser: true, useUnifiedTopology: true});
+        mongoose.connect("mongodb+srv://joselucas:3x0O1mftkLrt9dLH@books.uvzhq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {useNewUrlParser: true, useUnifiedTopology: true});
     }
 }
 
