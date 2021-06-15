@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=dev nodemon ./src/app.ts",
-    "production": "cross-env NODE_ENV=production nodemon ./src/app.ts",
+    "production": "cross-env NODE_ENV=production MONGODB_URL_PRODUCTION=mongodb+srv://joselucas:3x0O1mftkLrt9dLH@books.uvzhq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority nodemon ./src/app.ts",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports"
   },
   "repository": {
