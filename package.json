@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=dev nodemon ./src/app.ts",
-    "production": "cross-env NODE_ENV=production nodemon ./src/app.ts",
+    "production": "cross-env NODE_ENV=production pm2 start ./src/app.js",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports"
   },
   "repository": {
@@ -43,5 +43,8 @@
     "sucrase": "^3.18.1",
     "typescript": "^4.3.2"
   },
-  "homepage": "https://github.com/JoseLucasapp/admin-my-books#readme"
+  "homepage": "https://github.com/JoseLucasapp/admin-my-books#readme",
+  "dependencies": {
+    "pm2": "^5.1.0"
+  }
 }
