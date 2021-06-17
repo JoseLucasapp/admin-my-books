@@ -27,7 +27,6 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npm run build --if-present
-    - run: npm test
     env: 
       MONGODB_URL_PRODUCTION: mongodb+srv://joselucas:3x0O1mftkLrt9dLH@books.uvzhq.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
       PORT: 3000
