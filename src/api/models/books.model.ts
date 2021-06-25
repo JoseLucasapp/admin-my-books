@@ -48,7 +48,7 @@ export const add = async(data): Promise<BooksInterface> => {
 }
 
 export const getBooks = async(params): Promise<BooksInterface[]> =>{
-    const books = await BooksSchema.find(params);
+    const books = await BooksSchema.find({ "name":{ $regex: params } });
 
     return books.map((bk)=>{
         const book: Book = bk;

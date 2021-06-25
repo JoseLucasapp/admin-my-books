@@ -18,7 +18,7 @@ class SimpleController{
     }
 
     async get(req:Request, res:Response):Promise<Response>{
-        const params = req.query;
+        const params = req.query.name;
         try{
             const book = await getBooks(params);
             return res.status(200).json({data:book});
