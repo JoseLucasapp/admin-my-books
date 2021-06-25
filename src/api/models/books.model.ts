@@ -32,7 +32,7 @@ const booksReturn = (book): BooksInterface => {
 
 export const add = async(data): Promise<BooksInterface> => {
     const book: Book = await new BooksSchema({
-        name: data.name,
+        name: (data.name).toLowerCase(),
         genre: data.genre,
         author: data.author,
         year: data.year,
