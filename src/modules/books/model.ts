@@ -24,6 +24,9 @@ const schema = new Schema({
     type: Number,
     required: true,
   },
+  cover: {
+    type: String,
+  },
 })
 
 const Model = model<BooksInterface>('books', schema)

@@ -1,5 +1,5 @@
-import { PageOptionsInterface } from 'helpers/types'
-import { listsLimit } from 'helpers/utils'
+import { PageOptionsInterface } from '../../helpers/types'
+import { listsLimit } from '../../helpers/utils'
 import booksSchema, { BooksInterface } from './model'
 
 export const addNewBook = async (data: BooksInterface) => {
